@@ -1,19 +1,24 @@
 {
   "name": "parcel-sass-typescript",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A demo of Parcel with Sass and Typescript",
+  "source": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OlgaGustafsson/parcel-sass-typescript.git"
   },
-  "author": "",
+  "keywords": [],
+  "author": "Olga Gustafsson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/OlgaGustafsson/parcel-sass-typescript/issues"
   },
-  "homepage": "https://github.com/OlgaGustafsson/parcel-sass-typescript#readme"
+  "homepage": "https://github.com/OlgaGustafsson/parcel-sass-typescript#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3"
+  }
 }
