@@ -5,23 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="scss/main.scss">
+    <script src="ts/app.ts">defer</script>
 </head>
-<link rel="stylesheet" href="scss/main.scss">
+
+
 <body>
-    <h1>Hej</h1>
+    <h1><i>Disney characters</i></h1>
+    <main class="main">
 
-    <section>
-        Lite text
+        <section class="content" id="image">
+            <p class="image">
+                <img alt="disneycharacter" id="img">
+            </p>
+        </section>
 
-    </section>
-    <section>
-        Och lite mer text kommer här<br>
-        mer text mer text mer text
+        <section class="content">
+            <p class=""button>
+            <button id="button" class="grow">Show</button>
+            </p>
+        </section>
 
-    </section>
+        <section classs="content">
+                <p class ="search">
+            
+                        <label for="number">Number:</label><br>
+                        <input id="id-number" type="number" name="number" placeholder="max 7438" required><br>
+                
+
+                    <!-- <input type="text" name="queryString" id="query-string"> -->
+                    <button id="search-btn">Search</button>
+                </p>
+                <!-- <p class = "select-name">
+                    <select name="names" id="names">
+                    <option value="empty">Loading names</option>
+                    </select>
+                </p> -->
+
+        </section>
+
+        <section class="content" id="info">
+            <!--name from search-->
+        </section>
     
-    
-
-    <script defer src="ts/app.ts"></script>
+    </main>
 </body>
 </html>

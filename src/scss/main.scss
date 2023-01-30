@@ -1,0 +1,61 @@
+h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    flex:1; 
+    justify-content: center;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(185, 211, 199);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    // display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    grid-auto-rows: minmax(250px, auto);
+    border: 3px solid rgb(49, 112, 68);
+    padding: 10px;
+    margin: 20px;
+}
+
+.content {
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid rgb(49, 112, 68);
+}
+
+p {
+    display:flex;
+    justify-content: center;
+}
+
+// #name-div {
+//     border: 2px solid burlywood;
+// }
+
+#favour {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;   
+    
+}
+
+.grow:hover { 
+    transform: scale(1.1); 
+    }
+
+
+.grow {
+    
+    width: 10em;
+    height: 3em;
+    border-radius: 5%;
+    border-color: rgb(220, 220, 151);
+}
+
+
