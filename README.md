@@ -1,1 +1,1 @@
-# parcel-sass-typescript
+# parcel-sass-typescript-ajax
