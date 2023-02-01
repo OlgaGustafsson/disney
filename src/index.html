@@ -8,46 +8,50 @@
     <link rel="stylesheet" href="scss/main.scss">
     <script defer src="ts/app.ts"></script>
 </head>
-
-
 <body>
     <h1><i>Disney characters</i></h1>
     <main class="main">
+    <section class="a">
+        <section class="content" id="name">
+            <p>
+            Hej! Jag heter...   
+            </p>
+        </section>
 
         <section class="content" id="image">
-            <p class="image">
-                <img alt="disneycharacter" id="img">
-            </p>
-        </section>
-
-        <section class="content">
-            <p class=""button>
-            <button id="button" class="grow">Show</button>
-            </p>
-        </section>
-
-        <section classs="content">
-                <p class ="search">
-            
-                        <label for="number">Number:</label><br>
-                        <input id="id-number" type="number" name="number" placeholder="max 7438" required><br>
-                
-
-                    <!-- <input type="text" name="queryString" id="query-string"> -->
-                    <button id="search-btn">Search</button>
+                <p class="image">
+                <img src="https://static.wikia.nocookie.net/disney/images/8/8a/Ursa_Gummi_.jpg" 
+                alt="disneycharacter" id="img">
                 </p>
-                <!-- <p class = "select-name">
-                    <select name="names" id="names">
-                    <option value="empty">Loading names</option>
-                    </select>
-                </p> -->
-
         </section>
-
         <section class="content" id="info">
-            <!--name from search-->
+            <p>
+            Hej igen!    
+            </p>
         </section>
-    
+    </section>
+        
+    <section class="b">
+        <section class="content" id="show">
+                <p class=""button>
+                    <button id="button-image" class="grow">Show</button>
+                </p>
+        </section>
+
+        <section classs="content" id="search">
+            <p class ="search">
+                <!-- <label for="number">Number:</label><br> -->
+                <input id="id-number" type="number" name="number" placeholder="max 7438" required><br>                
+                <button id="button-search" type="button">Search</button>
+            </p>
+        </section>
+
+        <section class="content" id="btn-info">
+                <p class=""button>
+                    <button id="button-info" class="grow">More info</button>
+                </p>
+        </section>
+    </section>
     </main>
 </body>
 </html>
