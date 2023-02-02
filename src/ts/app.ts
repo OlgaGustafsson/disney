@@ -11,8 +11,6 @@ const button = document.querySelector("#button-image") as HTMLButtonElement;
 // const inputNumber = document.querySelector("#id-number") as HTMLInputElement;
 const infoSec = document.querySelector('#info') as HTMLElement;
 
-
-
 //____________get all characters__________
 
 
@@ -32,17 +30,18 @@ button.addEventListener("click", async (event) => {
     async function showImage() {
         const response = await fetch(url);
         const data = await response.json();
+
+        //console.log(data.data[1]);
         
-        const randomElem = Math.floor(Math.random() * data.length + 1);
+        const randomElem = Math.floor(Math.random() * data.data.length + 1);
+        imgElem.src = data.data[randomElem].imageUrl;
 
-        imgElem.src = data[randomElem].imageUrl;
-
-        console.log(data[randomElem].imageUrl);
+        console.log(data.data[randomElem].imageUrl);
     
 }
 showImage();
-
 });
+
 
 
 
