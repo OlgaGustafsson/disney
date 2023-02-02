@@ -33,7 +33,7 @@ body {
     // flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-grid-template-columns: repeat(1, 2fr);
+    grid-template-columns: repeat(1, 2fr);
 
 //     gap: 5px;
 //     grid-auto-rows: minmax(250px, auto);
@@ -53,17 +53,11 @@ p {
     justify-content: center;
 }
 
-// #name-div {
-//     border: 2px solid burlywood;
+// #image {
+//     height: 300px;
+//     width: 300px;
+//     border-radius: 50%;
 // }
-
-#favour {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;   
-    
-}
 
 .grow:hover { 
     transform: scale(1.1); 
