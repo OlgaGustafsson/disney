@@ -2,6 +2,7 @@
 
 const url = "https://api.disneyapi.dev/characters/";
 const urlPage = "https://api.disneyapi.dev/characters?page=";
+const urlName = "https://api.disneyapi.dev/character?name="
 
 const imgElem = document.querySelector('#img') as HTMLImageElement;
 const buttonImage = document.querySelector("#button-image") as HTMLButtonElement;
@@ -15,18 +16,17 @@ const inputNumberPage = document.querySelector("#page-number") as HTMLInputEleme
 const pageInfo = document.querySelector(".page-info") as HTMLParagraphElement;
 
 
-//____________get all characters__________
+//____________get all characters___________
 
 getAllCharacters();
 async function getAllCharacters() {
         const response = await fetch(url);
         const data = await response.json();
-        
 
         console.log(data);    
 };
 
-//_______________choice page___________
+//_________________choice page_____________
 
 buttonPage.addEventListener("click", async (event) => {
 async function getPage() {
@@ -35,14 +35,26 @@ async function getPage() {
     
     console.log(data);
 
-    //pageInfo.innerHTML = "";
+    //__________show random character from page_________
+    
+    const randomElem = Math.floor(Math.random() * data.data.length + 1);
+    imgElem.src = data.data[randomElem].imageUrl;
+
+    nameElem.innerHTML = `Hello! My name is ${data.data[randomElem].name}`;
+
+    infoSec.innerHTML = `Here are video games with ${data.data[randomElem].name}: 
+                        ${data.data[randomElem].videoGames}`;
+
+    //___________show page info____________
+
+    pageInfo.innerHTML = "";
     pageInfo.innerHTML = `Page number ${inputNumberPage.value} have characters 
                     with ID from ${data.data[0]._id} to ${data.data[49]._id}.`;
     console.log("pages");
-    
+   
 }
 getPage();
-//inputNumberPage.value = ""; // tar bort för att kunna visa page number i pageInfo
+//inputNumberPage.value = ""; // kommenterar bort för att kunna visa page number i pageInfo
 });
 
 //___________search character by id____________
