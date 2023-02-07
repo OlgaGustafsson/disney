@@ -9,12 +9,14 @@ const buttonImage = document.querySelector("#button-image") as HTMLButtonElement
 const nameElem = document.querySelector("#name") as HTMLElement;
 const buttonGames = document.querySelector("#button-games") as HTMLButtonElement;
 const infoSec = document.querySelector("#videogames") as HTMLElement;
-const buttonSearch = document.querySelector('#button-search') as HTMLButtonElement;
+const buttonId = document.querySelector('#button-id') as HTMLButtonElement;
 const inputNumber = document.querySelector("#id-number") as HTMLInputElement;
 const buttonPage = document.querySelector("#button-page") as HTMLButtonElement;
 const inputNumberPage = document.querySelector("#page-number") as HTMLInputElement;
 const pageInfo = document.querySelector(".page-info") as HTMLParagraphElement;
-
+const buttonName = document.querySelector("#button-name") as HTMLButtonElement;
+const inputName = document.querySelector("#name-search") as HTMLInputElement;
+const nameInfo = document.querySelector(".name-info") as HTMLElement;
 
 //____________get all characters___________
 
@@ -59,7 +61,7 @@ getPage();
 
 //___________search character by id____________
 
-buttonSearch.addEventListener("click", async (event) => {
+buttonId.addEventListener("click", async (event) => {
     async function getCharacterById() {
         const response = await fetch(url + inputNumber.value);
         const data = await response.json();
@@ -80,6 +82,23 @@ buttonSearch.addEventListener("click", async (event) => {
     getCharacterById();
     inputNumber.value = "";
 });
+
+//_______________search name_____________
+
+buttonName.addEventListener("click", async (event) => {
+        const response = await fetch(urlName + inputName.value);
+        const data = await response.json();
+
+        console.log(data);
+        nameInfo.innerHTML = "";
+        data.data.forEach((element: any) => {
+            nameInfo.innerHTML += `<li>Name: ${element.name} from movie: ${element.films[0]}</li>`;
+            
+            console.log(element.name);
+        });
+    inputName.value = "";
+});
+
 
 //___________show image/ random__________
 
@@ -109,7 +128,7 @@ const butElement = imgElem as HTMLImageElement;
             nameElem.innerHTML = `Hello! My name is ${data.data[randomElem].name}`;
             
             console.log(nameElem);
-                        
+                
         }
         showName();
     });
