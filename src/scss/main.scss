@@ -33,7 +33,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .main {
@@ -41,6 +41,7 @@ body {
     justify-content: space-around;
     align-items: center;
     grid-template-columns: repeat(1, 3fr);
+    
 //     gap: 5px;
 //     grid-auto-rows: minmax(250px, auto);
     border: 1px solid rgb(49, 112, 68);
@@ -64,6 +65,14 @@ p {
     color: rgb(90, 62, 11);
 }
 
+ul {
+    color: rgb(90, 62, 11);         
+}
+
+li { 
+    list-style-type: none; 	
+}
+
 #name {
     width: 200px,
 }
@@ -77,6 +86,10 @@ p {
 
 #videogames {
     width: 100%;
+}
+
+#id-number, #page-number, #name-search {
+    width: 130px;
 }
 
 .grow:hover { 
