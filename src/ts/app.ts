@@ -28,7 +28,7 @@ async function getAllCharacters() {
         console.log(data);    
 };
 
-//_________________choice page_____________
+//_______________choice page_____________
 
 buttonPage.addEventListener("click", async (event) => {
 async function getPage() {
@@ -41,9 +41,7 @@ async function getPage() {
     
     const randomElem = Math.floor(Math.random() * data.data.length + 1);
     imgElem.src = data.data[randomElem].imageUrl;
-
     nameElem.innerHTML = `Hello! My name is ${data.data[randomElem].name}`;
-
     infoSec.innerHTML = `Here are video games with ${data.data[randomElem].name}: 
                         ${data.data[randomElem].videoGames}`;
 
@@ -52,8 +50,7 @@ async function getPage() {
     pageInfo.innerHTML = "";
     pageInfo.innerHTML = `Page number ${inputNumberPage.value} have characters 
                     with ID from ${data.data[0]._id} to ${data.data[49]._id}.`;
-    console.log("pages");
-   
+    //console.log("pages");  
 }
 getPage();
 //inputNumberPage.value = ""; // kommenterar bort för att kunna visa page number i pageInfo
@@ -67,10 +64,7 @@ buttonId.addEventListener("click", async (event) => {
         const data = await response.json();
 
         console.log(data);
-
-        nameElem.innerHTML ="";
-        infoSec.innerHTML = "";
-        imgElem.src = "";
+        // imgElem.src = "";
         imgElem.src = data.imageUrl;
 
         console.log(data.imageUrl);
@@ -92,25 +86,23 @@ buttonName.addEventListener("click", async (event) => {
         console.log(data);
         nameInfo.innerHTML = "";
         data.data.forEach((element: any) => {
-            nameInfo.innerHTML += `<li>Name: ${element.name} from movie: ${element.films[0]}</li>`;
+            nameInfo.innerHTML += `<li>Name: ${element.name} (id: ${element._id}) 
+                                from movie: ${element.films[0]}</li>`;
             
             console.log(element.name);
         });
     inputName.value = "";
 });
 
-
 //___________show image/ random__________
 
 buttonImage.addEventListener("click", async (event) => {
     event.preventDefault();
-
     async function showImage() {
         const response = await fetch(url);
         const data = await response.json();
-
         //console.log(data.data[1]);
-        
+        //imgElem.src = "";
         const randomElem = Math.floor(Math.random() * data.data.length + 1);
         imgElem.src = data.data[randomElem].imageUrl;
 
@@ -150,7 +142,6 @@ const butElement = imgElem as HTMLImageElement;
         }
         showInfo();
     }); 
-
 }
 showImage();
 nameElem.innerHTML ="";
