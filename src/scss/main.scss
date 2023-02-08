@@ -45,7 +45,7 @@ body {
 //     gap: 5px;
 //     grid-auto-rows: minmax(250px, auto);
     border: 1px solid rgb(49, 112, 68);
-    border-radius: 2%;
+    border-radius: 5px;
     padding: 10px;
     margin: 5px;
 }
@@ -84,6 +84,10 @@ li {
     box-shadow: 5px 5px 15px gray;
 }
 
+#img:hover {
+    opacity: 0.5;
+}
+
 #videogames {
     width: 100%;
 }
@@ -100,7 +104,7 @@ li {
 .grow {
     width: 10em;
     height: 3em;
-    border-radius: 5%;
+    border-radius: 6px;
     border-color: rgb(180, 180, 176);
     background-color: rgb(164, 189, 109);
     box-shadow: 2px; 
