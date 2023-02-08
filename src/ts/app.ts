@@ -11,6 +11,7 @@ const buttonGames = document.querySelector("#button-games") as HTMLButtonElement
 const infoSec = document.querySelector("#videogames") as HTMLElement;
 const buttonId = document.querySelector('#button-id') as HTMLButtonElement;
 const inputNumber = document.querySelector("#id-number") as HTMLInputElement;
+const messegeElem = document.querySelector(".messege-number") as HTMLParagraphElement;
 const buttonPage = document.querySelector("#button-page") as HTMLButtonElement;
 const inputNumberPage = document.querySelector("#page-number") as HTMLInputElement;
 const pageInfo = document.querySelector(".page-info") as HTMLParagraphElement;
@@ -32,6 +33,7 @@ async function getAllCharacters() {
 
 buttonPage.addEventListener("click", async (event) => {
 async function getPage() {
+    if (inputNumberPage.value.length > 0) {
     const response = await fetch(urlPage + inputNumberPage.value);
     const data = await response.json();
     
@@ -50,7 +52,10 @@ async function getPage() {
     pageInfo.innerHTML = "";
     pageInfo.innerHTML = `Page number ${inputNumberPage.value} have characters 
                     with ID from ${data.data[0]._id} to ${data.data[49]._id}.`;
-    //console.log("pages");  
+    //console.log("pages"); 
+    } else {
+        pageInfo.innerHTML = `You must choice number of page!`;
+    }
 }
 getPage();
 //inputNumberPage.value = ""; // kommenterar bort för att kunna visa page number i pageInfo
@@ -60,10 +65,13 @@ getPage();
 
 buttonId.addEventListener("click", async (event) => {
     async function getCharacterById() {
+        if (inputNumber.value.length > 0) {
         const response = await fetch(url + inputNumber.value);
         const data = await response.json();
 
         console.log(data);
+
+        messegeElem.innerHTML = "";
         // imgElem.src = "";
         imgElem.src = data.imageUrl;
 
@@ -71,7 +79,10 @@ buttonId.addEventListener("click", async (event) => {
         
         nameElem.innerHTML = `Hello! My name is ${data.name}`;
         infoSec.innerHTML = `Here are video games with 
-            ${data.name}: ${data.videoGames}`;          
+            ${data.name}: ${data.videoGames}`; 
+        } else {
+            messegeElem.innerHTML = `You must choice number of id!`;
+        }         
     }
     getCharacterById();
     inputNumber.value = "";
@@ -86,10 +97,15 @@ buttonName.addEventListener("click", async (event) => {
         console.log(data);
         nameInfo.innerHTML = "";
         data.data.forEach((element: any) => {
+            if (inputName.value.length > 0) {
             nameInfo.innerHTML += `<li>Name: ${element.name} (id: ${element._id}) 
                                 from movie: ${element.films[0]}</li>`;
+            } else {
+                nameInfo.innerHTML = `You must right the name!`;
+            }
             
             console.log(element.name);
+
         });
     inputName.value = "";
 });
