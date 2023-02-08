@@ -50,11 +50,11 @@ async function getPage() {
     //___________show page info____________
 
     pageInfo.innerHTML = "";
-    pageInfo.innerHTML = `Page number ${inputNumberPage.value} have characters 
+    pageInfo.innerHTML = `Page number ${inputNumberPage.value} has characters 
                     with ID from ${data.data[0]._id} to ${data.data[49]._id}.`;
     //console.log("pages"); 
     } else {
-        pageInfo.innerHTML = `You must choice number of page!`;
+        pageInfo.innerHTML = `Choose a number!`;
     }
 }
 getPage();
@@ -70,7 +70,7 @@ buttonId.addEventListener("click", async (event) => {
         const data = await response.json();
 
         console.log(data);
-
+        
         messegeElem.innerHTML = "";
         // imgElem.src = "";
         imgElem.src = data.imageUrl;
@@ -81,7 +81,7 @@ buttonId.addEventListener("click", async (event) => {
         infoSec.innerHTML = `Here are video games with 
             ${data.name}: ${data.videoGames}`; 
         } else {
-            messegeElem.innerHTML = `You must choice number of id!`;
+            messegeElem.innerHTML = `Choose a number!`;
         }         
     }
     getCharacterById();
@@ -101,7 +101,7 @@ buttonName.addEventListener("click", async (event) => {
             nameInfo.innerHTML += `<li>Name: ${element.name} (id: ${element._id}) 
                                 from movie: ${element.films[0]}</li>`;
             } else {
-                nameInfo.innerHTML = `You must right the name!`;
+                nameInfo.innerHTML = `Write a name!`;
             }
             
             console.log(element.name);
@@ -121,6 +121,8 @@ buttonImage.addEventListener("click", async (event) => {
         //imgElem.src = "";
         const randomElem = Math.floor(Math.random() * data.data.length + 1);
         imgElem.src = data.data[randomElem].imageUrl;
+
+        
 
         console.log(data.data[randomElem].imageUrl);  
 
