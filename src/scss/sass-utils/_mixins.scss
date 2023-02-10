@@ -1,0 +1,55 @@
+@mixin button {
+    width: 10em;
+    height: 3em;
+    border-radius: 6px;
+}
+
+@mixin img-button {
+    height: 315px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+@mixin input-search {
+    width: 130px;
+    border-radius: 6px;  
+}
+
+@mixin h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+@mixin flex-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@mixin flex-content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+@mixin main-grid {
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    grid-template-columns: repeat(1, 3fr);
+    gap: 3px;
+}
+
+@mixin main-pm {
+    padding: 10px;
+    margin: 5px;
+}
+
+@mixin content-pm {
+    padding: 5px;
+    margin: 5px;
+}
