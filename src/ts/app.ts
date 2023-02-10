@@ -57,7 +57,7 @@ async function getPage() {
     }
 }
 getPage();
-//inputNumberPage.value = ""; // kommenterar bort för att kunna visa page number i pageInfo
+//inputNumberPage.value = ""; 
 });
 
 //___________search character by id____________
