@@ -1,114 +1,85 @@
-h1 {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    flex:1; 
-    justify-content: center;
-    text-align: center;
-    font-family:Arial, Helvetica, sans-serif;
-    color: rgb(159, 109, 15);
-}
+@charset 'utf-8';
+@use 'sass-utils' as *;
 
 body {
-    background-color: rgb(185, 211, 199);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.5cm;
-}
+    background-color: $body-rgb-color;
+    font-family: $body-font-family;
+    font-size: $body-font-size;
 
-.a {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.b {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around; 
-}
-
-.c {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.main {
-    display: grid;
-    justify-content: space-around;
-    align-items: center;
-    grid-template-columns: repeat(1, 3fr);
-    
-//     gap: 5px;
-//     grid-auto-rows: minmax(250px, auto);
-    // border: 1px solid rgb(159, 109, 15);
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-}
-
-.content {
-    padding: 5px;
-    margin: 5px;
-    color: rgb(90, 62, 11);
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-p {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: rgb(90, 62, 11);
-}
-
-ul {
-    color: rgb(90, 62, 11);         
-}
-
-li { 
-    list-style-type: none; 
-}
-
-#name {
-    width: 200px,
-}
-
-#img {
-    height: 315px;
-    width: 300px;
-    border-radius: 50%;
-    box-shadow: 5px 5px 15px gray;
-}
-
-#img:hover {
-    opacity: 0.5;
-}
-
-#videogames {
-    width: 100%;
-}
-
-#id-number, #page-number, #name-search {
-    width: 130px;
-}
-
-.grow:hover { 
-    transform: scale(1.1); 
-    background-color: rgb(238, 235, 202);
+    h1 {
+        @include h1;
+        font-family: $h1-font-family;
+        color: $h1-rgb-color;
     }
 
-.grow {
-    width: 10em;
-    height: 3em;
-    border-radius: 6px;
-    border-color: rgb(180, 180, 176);
-    background-color: rgb(164, 189, 109);
-    box-shadow: 2px; 
-    box-shadow: 5px 5px 15px gray;   
+    .main {
+        @include main-grid;
+        @include main-pm;
+
+        .a {
+            @include flex-section;
+        
+            #name {
+                width: $width-name-info;
+            }
+
+            #img {
+                @include img-button;
+                box-shadow: 8px 8px 15px $box-shadow-rgb-color;
+            
+                &:hover {
+                    opacity: $img-button-opacity;
+                }
+            }
+        }
+
+        .b {
+            @include flex-section;
+
+            #videogames {
+                width: $width-videogames-info;
+            }
+        }
+
+        .c {
+            @include flex-section;
+
+            #id-number, #page-number, #name-search {
+                @include input-search;   
+            }
+
+            ul {
+                color: $content-rgb-color; 
+                
+                li { 
+                    list-style-type: $list-style; 
+                }
+            }
+        }
+
+        .grow {
+            @include button;
+            border-color: $button-border-rgb-color;
+            background-color: $button-rgb-color;
+            box-shadow: 5px 5px 15px $box-shadow-rgb-color; 
+            
+            &:hover { 
+                transform: $grow-hover-transform; 
+                background-color: $button-hover-rgb-color;
+                }
+        }
+
+        .content {
+            @include content-pm;
+            color: $content-rgb-color;
+            @include flex-content;
+        }
+        
+        p {
+            @include flex-content;
+            color: $content-rgb-color;
+        }
+   
+    }
+
 }
-
-
