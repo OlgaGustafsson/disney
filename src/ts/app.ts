@@ -1,4 +1,4 @@
-/* From API https://api.disneyapi.dev */
+/* API https://api.disneyapi.dev */
 
 const url = "https://api.disneyapi.dev/characters/";
 const urlPage = "https://api.disneyapi.dev/characters?page=";
@@ -29,7 +29,7 @@ async function getAllCharacters() {
         console.log(data);    
 };
 
-//_______________choice page_____________
+//_______________search page_____________
 
 buttonPage.addEventListener("click", async (event) => {
 async function getPage() {
@@ -39,7 +39,7 @@ async function getPage() {
     
     console.log(data);
 
-    //__________show random character from page_________
+    //__________show character from page/ random_________
     
     const randomElem = Math.floor(Math.random() * data.data.length + 1);
     imgElem.src = data.data[randomElem].imageUrl;
@@ -52,9 +52,8 @@ async function getPage() {
     pageInfo.innerHTML = "";
     pageInfo.innerHTML = `Page number ${inputNumberPage.value} has characters 
                     with ID from ${data.data[0]._id} to ${data.data[49]._id}.`;
-    //console.log("pages"); 
     } else {
-        pageInfo.innerHTML = `Choose a number!`;
+        pageInfo.innerHTML = `Please choose a number`;
     }
 }
 getPage();
@@ -81,14 +80,14 @@ buttonId.addEventListener("click", async (event) => {
         infoSec.innerHTML = `Here are video games with 
             ${data.name}: ${data.videoGames}`; 
         } else {
-            messegeElem.innerHTML = `Choose a number!`;
+            messegeElem.innerHTML = `Please choose a number`;
         }         
     }
     getCharacterById();
     inputNumber.value = "";
 });
 
-//_______________search name_____________
+//_______________search character by name_____________
 
 buttonName.addEventListener("click", async (event) => {
         const response = await fetch(urlName + inputName.value);
@@ -101,7 +100,7 @@ buttonName.addEventListener("click", async (event) => {
             nameInfo.innerHTML += `<li>Name: ${element.name} (id: ${element._id}) 
                                 from movie: ${element.films[0]}</li>`;
             } else {
-                nameInfo.innerHTML = `Write a name!`;
+                nameInfo.innerHTML = `Please enter a name`;
             }
             
             console.log(element.name);
@@ -122,11 +121,9 @@ buttonImage.addEventListener("click", async (event) => {
         const randomElem = Math.floor(Math.random() * data.data.length + 1);
         imgElem.src = data.data[randomElem].imageUrl;
 
-        
-
         console.log(data.data[randomElem].imageUrl);  
 
-//___________show name of random image_________
+//___________show name (image/random)_________
       
 const butElement = imgElem as HTMLImageElement;
     butElement.addEventListener("click", async (event) => {
@@ -142,7 +139,7 @@ const butElement = imgElem as HTMLImageElement;
         }
         showName();
     });
-//______________show video games______________
+//___________show video games (image/random)________
 
     buttonGames.addEventListener("click", async (event) => {
         event.preventDefault();
