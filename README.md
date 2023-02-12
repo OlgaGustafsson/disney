@@ -13,7 +13,7 @@ Det finns tre sökmöjligheter:
 
 ## Jag har byggt min Disney-app med:
 
-- Typescript
+- TypeScript
 - Sass
 - AJAX
 
