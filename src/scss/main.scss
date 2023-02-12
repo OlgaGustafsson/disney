@@ -81,5 +81,11 @@ body {
         }
    
     }
+    .footer {
+        @include flex-content;
+        color: $h1-rgb-color;
+        font-size: 0.4cm;
+        
+    }
 
 }
