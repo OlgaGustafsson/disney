@@ -37,7 +37,12 @@ body {
             @include flex-section;
 
             #videogames {
-                width: $width-videogames-info;
+                // width: $width-videogames-info;
+                overflow: $info-overflow;
+                width: 230px;
+                height: 200px;
+                background-color: $info-background-color;
+                border-radius: $info-border-radius;
             }
         }
 
@@ -48,8 +53,17 @@ body {
                 @include input-search;   
             }
 
+            .page-info {
+                width: 260px;
+            }
+
             ul {
-                color: $content-rgb-color; 
+                color: $content-rgb-color;
+                overflow: $info-overflow;
+                width: 230px;
+                height: 200px;
+                background-color: $info-background-color;
+                border-radius: $info-border-radius;
                 
                 li { 
                     list-style-type: $list-style; 
@@ -85,7 +99,18 @@ body {
         @include flex-content;
         color: $h1-rgb-color;
         font-size: 0.4cm;
-        
+    }
+
+}
+
+@media only screen and (min-width: 915px) {
+
+    .main {
+        display: grid;
+        gap: 3px;
+        grid-template-columns: repeat(3, 1fr); 
+        justify-content: space-around;
+        align-items: center;      
     }
 
 }
