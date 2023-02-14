@@ -10,6 +10,7 @@ body {
         @include h1;
         font-family: $h1-font-family;
         color: $h1-rgb-color;
+        font-size: $h1-font-size;
     }
 
     .main {
@@ -21,6 +22,8 @@ body {
         
             #name {
                 width: $width-name-info;
+                font-family: $h1-font-family;
+                font-size: 28px;
             }
 
             #img {
@@ -37,10 +40,10 @@ body {
             @include flex-section;
 
             #videogames {
-                // width: $width-videogames-info;
                 overflow: $info-overflow;
-                width: 230px;
+                width: 220px;
                 height: 200px;
+                padding: 20px;
                 background-color: $info-background-color;
                 border-radius: $info-border-radius;
             }
@@ -60,13 +63,14 @@ body {
             ul {
                 color: $content-rgb-color;
                 overflow: $info-overflow;
-                width: 230px;
+                width: 220px;
                 height: 200px;
+                padding: 25px;
                 background-color: $info-background-color;
                 border-radius: $info-border-radius;
                 
                 li { 
-                    list-style-type: $list-style; 
+                    list-style-type: $list-style;    
                 }
             }
         }
@@ -98,7 +102,9 @@ body {
     .footer {
         @include flex-content;
         color: $h1-rgb-color;
-        font-size: 0.4cm;
+        font-size: 0.5cm;
+        text-decoration: none;
+        font-family: $h1-font-family;
     }
 
 }
