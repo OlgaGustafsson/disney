@@ -2,7 +2,7 @@
 
 **Disney** är en applikation med disney-karaktärer. Totalt är det 7438 karaktärer och 149 sidor. Alla karaktärer har en bild och lite information som t.ex. namn, id, film och videospel.
 
-Man kan se bilder på alla 50 karaktärer från sidan 1 genom att trycka på ”Show image” knappen. Knappen ”Show name” visar namn på en vald karaktär och knappen ”Show video games” visar om det finns videospel med en vald karaktär.
+Man kan se en slumpmässig bild på en av 50 disney-karaktärer från sidan 1 genom att trycka på ”Show image” knappen samt namn och videospel (om den finns) på en slumpmässig karaktär.
 
 Vill du se mer?
 Det finns tre sökmöjligheter:
