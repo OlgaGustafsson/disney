@@ -7,7 +7,6 @@ const urlName = "https://api.disneyapi.dev/character?name="
 const imgElem = document.querySelector('#img') as HTMLImageElement;
 const buttonImage = document.querySelector("#button-image") as HTMLButtonElement;
 const nameElem = document.querySelector("#name") as HTMLElement;
-const buttonGames = document.querySelector("#button-games") as HTMLButtonElement;
 const infoSec = document.querySelector("#videogames") as HTMLElement;
 const buttonId = document.querySelector('#button-id') as HTMLButtonElement;
 const inputNumber = document.querySelector("#id-number") as HTMLInputElement;
@@ -18,6 +17,7 @@ const pageInfo = document.querySelector(".page-info") as HTMLParagraphElement;
 const buttonName = document.querySelector("#button-name") as HTMLButtonElement;
 const inputName = document.querySelector("#name-search") as HTMLInputElement;
 const nameInfo = document.querySelector(".name-info") as HTMLElement;
+
 
 //____________get all characters___________
 
@@ -71,7 +71,6 @@ buttonId.addEventListener("click", async (event) => {
         console.log(data);
         
         messegeElem.innerHTML = "";
-        // imgElem.src = "";
         imgElem.src = data.imageUrl;
 
         console.log(data.imageUrl);
@@ -98,7 +97,7 @@ buttonName.addEventListener("click", async (event) => {
         data.data.forEach((element: any) => {
             if (inputName.value.length > 0) {
             nameInfo.innerHTML += `<li>Name: ${element.name} (id: ${element._id}) 
-                                from movie: ${element.films[0]}</li>`;
+                                from movie: ${element.films}</li>`;
             } else {
                 nameInfo.innerHTML = `Please enter a name`;
             }
@@ -116,47 +115,18 @@ buttonImage.addEventListener("click", async (event) => {
     async function showImage() {
         const response = await fetch(url);
         const data = await response.json();
-        //console.log(data.data[1]);
-        //imgElem.src = "";
+
         const randomElem = Math.floor(Math.random() * data.data.length + 1);
         imgElem.src = data.data[randomElem].imageUrl;
 
+        nameElem.innerHTML = "";
+        nameElem.innerHTML = `Hello! My name is ${data.data[randomElem].name}`;
+        infoSec.innerHTML = "";
+        infoSec.innerHTML = `Here are video games with ${data.data[randomElem].name}: 
+                                ${data.data[randomElem].videoGames}`;
+
         console.log(data.data[randomElem].imageUrl);  
 
-//___________show name (image/random)_________
-      
-const butElement = imgElem as HTMLImageElement;
-    butElement.addEventListener("click", async (event) => {
-        event.preventDefault();
-        async function showName() {
-            const response = await fetch(url);
-            const data = await response.json();
-            nameElem.innerHTML = "";
-            nameElem.innerHTML = `Hello! My name is ${data.data[randomElem].name}`;
-            
-            console.log(nameElem);
-                
-        }
-        showName();
-    });
-//___________show video games (image/random)________
-
-    buttonGames.addEventListener("click", async (event) => {
-        event.preventDefault();
-        async function showInfo() {
-            const response = await fetch(url);
-            const data = await response.json();
-            
-            console.log(data);
-
-            infoSec.innerHTML = "";
-            infoSec.innerHTML = `Here are video games with ${data.data[randomElem].name}: 
-                                ${data.data[randomElem].videoGames}`;
-            
-            console.log(infoSec);
-        }
-        showInfo();
-    }); 
 }
 showImage();
 nameElem.innerHTML ="";
