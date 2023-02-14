@@ -16,8 +16,8 @@
 }
 
 @mixin h1 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-bottom: 8px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -37,7 +37,7 @@
 }
 
 @mixin main-grid {
-    display: grid;
+    // display: grid;
     justify-content: space-around;
     align-items: center;
     // grid-template-columns: repeat(1, 3fr);
