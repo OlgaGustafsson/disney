@@ -1,8 +1,8 @@
 /* API https://api.disneyapi.dev */
 
-const url = "https://api.disneyapi.dev/characters/";
-const urlPage = "https://api.disneyapi.dev/characters?page=";
-const urlName = "https://api.disneyapi.dev/character?name="
+const url = "https://api.disneyapi.dev/character/";
+const urlPage = "https://api.disneyapi.dev/character?page=";
+const urlName = "https://api.disneyapi.dev/character?name=";
 
 const imgElem = document.querySelector('#img') as HTMLImageElement;
 const buttonImage = document.querySelector("#button-image") as HTMLButtonElement;
@@ -71,13 +71,13 @@ buttonId.addEventListener("click", async (event) => {
         console.log(data);
         
         messegeElem.innerHTML = "";
-        imgElem.src = data.imageUrl;
+        imgElem.src = data.data.imageUrl;
 
-        console.log(data.imageUrl);
+        console.log(data.data.imageUrl);
         
-        nameElem.innerHTML = `Hello! My name is ${data.name}`;
+        nameElem.innerHTML = `Hello! My name is ${data.data.name}`;
         infoSec.innerHTML = `Here are video games with 
-            ${data.name}: ${data.videoGames}`; 
+            ${data.data.name}: ${data.data.videoGames}`; 
         } else {
             messegeElem.innerHTML = `Please choose a number`;
         }         
