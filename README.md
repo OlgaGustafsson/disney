@@ -22,8 +22,8 @@ Det var mycket smidigt att använda [Parsel](https://parceljs.org/) för att man
 Jag har använt [Disney API](https://disneyapi.dev/)
 och följande URLer:
 
-- [URL som ger alla karaktärer från sidan 1](https://api.disneyapi.dev/characters/);
-- [URL som ger alla karaktärer från en vald sida](https://api.disneyapi.dev/characters?page=);
+- [URL som ger alla karaktärer från sidan 1](https://api.disneyapi.dev/character/);
+- [URL som ger alla karaktärer från en vald sida](https://api.disneyapi.dev/character?page=);
 - [URL som ger alla karaktärer med ett valt namn](https://api.disneyapi.dev/character?name=);
 
 ## Vill du köra min app lokalt?
